@@ -1,7 +1,11 @@
 package lab3;
 
-import java.util.Random;
-
+/**
+ * A Toy class for testing basic inheritance in java (Child)
+ * 
+ * @author Riley Redd
+ * @version 1.0.0
+ */
 public class ElementalCuteCreature extends CuteCreature
 {
     private String elementalAlignment;
@@ -23,7 +27,15 @@ public class ElementalCuteCreature extends CuteCreature
     }
     
     
-    
+    /**
+     * Same as parent class's constructor (save for elementalAlignment)
+     * 
+     * @param speciesName
+     * @param maxHPValue
+     * @param attackDamageValue
+     * @param experienceValueOnDeath
+     * @param elementalAlignmentName
+     */
     public ElementalCuteCreature(String speciesName, int maxHPValue, int attackDamageValue, int experienceValueOnDeath,
                                  String elementalAlignmentName)
     {
@@ -35,14 +47,14 @@ public class ElementalCuteCreature extends CuteCreature
     @Override
     public void attack(CuteCreature c)
     {
-        System.out.println(this.getSpecies() + " attacks " + c.getSpecies() + " (might miss!)");
-        Random roll = new Random();
-        if (roll.nextInt(100) > 67)
+        //Except for the elemental part, this is all the same as the parent class's version
+        if (Math.random()*100 > 67)
         {
             if (c instanceof ElementalCuteCreature)
             {
                 String enemyElement = ( (ElementalCuteCreature) c).getElement();
                 
+                //This switch statement deals out elemental damage as called for by the assignment
                 switch (this.getElement())
                 {
                 case "Earth":

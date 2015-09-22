@@ -1,7 +1,11 @@
 package lab3;
 
-import java.util.Random;
-
+/**
+ * A toy class for testing inheritance in java (Parent)
+ * 
+ * @author Riley Redd
+ * @version 1.0.0
+ */
 public class CuteCreature
 {
     private String species;
@@ -138,7 +142,12 @@ public class CuteCreature
     /* ####### End of Getters and Setters ####### */
     
     
-    
+    /**
+     * @param speciesName - A string (it can also be used as the social name of said CutaCreature
+     * @param maxHPValue - The max hitpoints of a CuteCreature (current hp will be set to the same value)
+     * @param attackDamageValue - how much damage this CuteCreature does when it successfully hits an enemy
+     * @param experienceValueOnDeath - how much experience the CuteCreature will give when attacked at 0 hp
+     */
     public CuteCreature(String speciesName, int maxHPValue, int attackDamageValue, int experienceValueOnDeath)
     {
         this.setSpecies(speciesName);
@@ -150,12 +159,22 @@ public class CuteCreature
         this.setHitPoints(this.getMaxHitPoints());
     }
     
+    /**
+     * This method is called when a CuteCreature object loses health.
+     *  (Could theoretically be used to gain health.)
+     *  
+     * Handled negative numbers in the setHitPoints() method
+     * 
+     * @param dmg
+     */
     public void takeDamage(int dmg)
     {
-        // Handled negative numbers in the setHitPoints() method
         this.setHitPoints(this.getHitPoints() - dmg);
     }
     
+    /**
+     * This method simply adjusts the instance variables and then recalls the gainExp() method.
+     */
     private void levelUp()
     {
         this.setLevel(this.getLevel() + 1);
@@ -167,6 +186,12 @@ public class CuteCreature
         this.gainExp(-150);
     }
     
+    /**
+     * This method simply adds experience and lets the levelUp() method handle the rest.
+     * 
+     * @param exp - and integer, should almost always be filled with the Experience value
+     *                  of a CuteCreature object.
+     */
     public void gainExp(int exp)
     {
         this.setExperiencePoints(this.getExperiencePoints() + exp);
@@ -177,11 +202,19 @@ public class CuteCreature
         }
     }
     
+    /**
+     * This method calls an attack on an enemy creature with a 67% chance of hitting
+     * 
+     * Always gives exp if opponent HP is zero (this means that opponents with zero exp
+     *  will give exp even if you miss your attack) <- The problem does not define
+     *  anything in reguards to this issue, so I will abuse it.
+     * 
+     * @param c - A CuteCreature object you want the calling CuteCreature to attack
+     */
     public void attack(CuteCreature c)
     {
-        System.out.println(this.getSpecies() + " attacks " + c.getSpecies() + " (might miss!)");
-        Random roll = new Random();
-        if (roll.nextInt(100) > 67)
+        
+        if (Math.random()*100 > 67)
         {
             c.takeDamage(this.getAttackDamage());
         }

@@ -47,11 +47,11 @@ public class Laptop extends Computer
     public String toString()
     {
         return    "Laptop:\r\n"
-                + "-------"
+                + "-------\r\n"
                 + "CPU: " + this.getProcessor() + "\r\n"
                 + "HDD: " + this.getGbOfRAM() + " GB \r\n"
                 + "HDD: " + this.getGbOfHardDrive() + " GB\r\n"
-                + "Screen: " + this.getScreenSize() + "\""
-                + "Cost: $" + this.getCost();
+                + "Screen: " + this.getScreenSize() + "\"\r\n"
+                + "Cost: $" + this.getCost() + "\r\n";
     }
 }

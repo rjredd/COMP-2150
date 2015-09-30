@@ -47,12 +47,12 @@ public class Desktop extends Computer
     public String toString()
     {
         return    "Desktop:\r\n"
-                + "-------"
+                + "-------\r\n"
                 + "CPU: " + this.getProcessor() + "\r\n"
                 + "HDD: " + this.getGbOfRAM() + " GB \r\n"
                 + "HDD: " + this.getGbOfHardDrive() + " GB\r\n"
                 + "VRAM: " + this.getMbOfVRAM() + " MB\r\n"
-                + "Cost: $" + this.getCost();
+                + "Cost: $" + this.getCost() + "\r\n";
     }
 
 }

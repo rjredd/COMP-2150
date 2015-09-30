@@ -1,6 +1,6 @@
 package lab4;
 
-public abstract class Computer
+public abstract class Computer implements Comparable
 {
     private String processor;
     private int gbOfRAM, gbOfHardDrive;
@@ -74,4 +74,21 @@ public abstract class Computer
     }
     
     public abstract float getCost();
+    
+    @Override
+    public int compareTo(Object o)
+    {
+        if (this.getCost() < ((Computer) o).getCost())
+        {
+            return -1;
+        }
+        else if (this.getCost() > ((Computer) o).getCost())
+        {
+            return 1;
+        }
+        else // this Computer obj. has same cost as other Computer obj.
+        {
+            return 0;
+        }
+    }
 }

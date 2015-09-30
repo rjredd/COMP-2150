@@ -17,7 +17,7 @@ public class Laptop extends Computer
      */
     public void setScreenSize(float newScreenSize)
     {
-        if (newScreenSize > 0)
+        if (newScreenSize > 0) // makes sure numbers are positive and not 0
         {
             screenSize = newScreenSize;
         }

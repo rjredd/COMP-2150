@@ -31,7 +31,7 @@ public abstract class Computer implements Comparable
      */
     public void setGbOfRAM(int gbAmount)
     {
-        if (gbAmount > 0)
+        if (gbAmount > 0) // makes sure numbers are positive and not 0
         {
             gbOfRAM = gbAmount;
         }
@@ -54,7 +54,7 @@ public abstract class Computer implements Comparable
      */
     public void setGbOfHardDrive(int gbAmount)
     {
-        if (gbAmount > 0)
+        if (gbAmount > 0) // makes sure numbers are positive and not 0
         {
             gbOfHardDrive = gbAmount;
         }
@@ -80,11 +80,11 @@ public abstract class Computer implements Comparable
     {
         if (this.getCost() < ((Computer) o).getCost())
         {
-            return -1;
+            return -1; // the calling object is less expensive than the other.
         }
         else if (this.getCost() > ((Computer) o).getCost())
         {
-            return 1;
+            return 1; // the calling object is more expensive than the other.
         }
         else // this Computer obj. has same cost as other Computer obj.
         {

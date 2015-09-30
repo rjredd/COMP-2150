@@ -19,6 +19,15 @@ public class Client
         }
     }
 
+    /**
+     * Did my sorting here to keep the main method clean.
+     * A simple Brute Force sorting algorithm.
+     * Changes the parameter obj directly.
+     * 
+     * !Uses non-OOP paradigm Code!
+     * 
+     * @param aComputerArray
+     */
     private static void aSortingMethod(Computer[] aComputerArray)
     {
         boolean flag = true;

@@ -17,7 +17,7 @@ public class Desktop extends Computer
      */
     public void setMbOfVRAM(int mbAmount)
     {
-        if(mbAmount > 0)
+        if(mbAmount > 0) // makes sure numbers are positive and not 0
         {
             mbOfVRAM = mbAmount;
         }

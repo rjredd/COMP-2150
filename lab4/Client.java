@@ -1,9 +1,15 @@
 package lab4;
 
+/**
+ * A Toy class for the purpose of a homework assignment.
+ * 
+ * @author Riley Redd
+ */
 public class Client
 {
     public static void main(String[] args)
     {
+        // Create and initialize an array of 5 Computer Objects
         Computer[] computers = new Computer[5];
         computers[0] = new Desktop("Average Processor", 4, 256, 512);
         computers[1] = new Laptop("WTF Procesor", 64, 4096, 17.1f);
@@ -11,8 +17,10 @@ public class Client
         computers[3] = new Desktop("The Good One", 8, 512, 1024);
         computers[4] = new Desktop("The Big-Momma", 32, 2048, 4096);
 
+        // Sort the Computer Objects.
         aSortingMethod(computers);
         
+        // Print out each of the computer objects to the command line.
         for(int i = 0; i < computers.length; i++)
         {
             System.out.println(computers[i]);

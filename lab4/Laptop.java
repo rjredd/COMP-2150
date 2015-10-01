@@ -1,5 +1,10 @@
 package lab4;
 
+/**
+ * A Toy class for the purpose of a homework assignment.
+ * 
+ * @author Riley Redd
+ */
 public class Laptop extends Computer
 {
     private float screenSize;
@@ -39,6 +44,7 @@ public class Laptop extends Computer
     @Override
     public float getCost()
     {
+        // Overridden to return the cost, as a float, as defined by the problem.
         return 300 + (8 * this.getGbOfRAM()) + (0.19f * this.getGbOfHardDrive())
                    + (13.83f * this.getScreenSize());
     }

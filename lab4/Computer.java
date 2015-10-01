@@ -1,5 +1,10 @@
 package lab4;
 
+/**
+ * A Toy class for the purpose of a homework assignment.
+ * 
+ * @author Riley Redd
+ */
 public abstract class Computer implements Comparable
 {
     private String processor;

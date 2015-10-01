@@ -1,5 +1,10 @@
 package lab4;
 
+/**
+ * A Toy class for the purpose of a homework assignment.
+ * 
+ * @author Riley Redd
+ */
 public class Desktop extends Computer
 {
     private int mbOfVRAM;
@@ -39,6 +44,7 @@ public class Desktop extends Computer
     @Override
     public float getCost()
     {
+     // Overridden to return the cost, as a float, as defined by the problem.
         return 250 + (5.5f * this.getGbOfRAM()) + (0.1f * this.getGbOfHardDrive())
                 + (0.3f * this.getMbOfVRAM());
     }

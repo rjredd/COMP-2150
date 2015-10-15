@@ -1,14 +1,17 @@
 package programmingassignment1;
 
+/**
+ * A toy class for making a low-level console-based Minesweeper.
+ * 
+ * @author Riley Redd
+ */
 public class Tile
 {
     private boolean isCovered, isMarked, containsMine;
     private int adjacentMineCount;
-    
-    
-    
+
     /* ############ Getters and Setters ############ */
-    
+
     /**
      * @return the isCovered
      */
@@ -76,12 +79,9 @@ public class Tile
     {
         this.adjacentMineCount = adjacentMineCount;
     }
-    
+
     /* ######## End of Getters and Setters ######### */
-    
-    
-    
-    
+
     public Tile(boolean hasMine)
     {
         this.setCovered(true);
@@ -89,20 +89,23 @@ public class Tile
         this.setContainsMine(hasMine);
         this.setAdjacentMineCount(0);
     }
-    
+
     @Override
     public String toString()
     {
+        if (this.getAdjacentMineCount() == -1)
+        {
+            return "Ø";
+        }
         if (this.isCovered())
+        {
+            if (this.isMarked())
+                return "√";
             return "■";
-        else if (this.isMarked())
-            return "√";
-        else if (this.isContainsMine())
+        } else if (this.isContainsMine())
             return "X";
-        else if (this.getAdjacentMineCount() > 0)
+        else
             return this.getAdjacentMineCount() + "";
-        else //an uncovered, unmarked, no mine, no adjacent mine tile
-            return "";
     }
 }
 

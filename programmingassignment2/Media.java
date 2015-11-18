@@ -2,7 +2,7 @@ package programmingassignment2;
 
 public abstract class Media
 {
-    private String title, year, averageRating;
+    private String title, year, averageRating, type;
 
     public void setTitle(String newTitle)
     {
@@ -18,6 +18,11 @@ public abstract class Media
     {
         this.averageRating = newAvg;
     }
+    
+    public void setType(String type)
+    {
+        this.type = type;
+    }
 
     public String getTitle()
     {
@@ -32,6 +37,11 @@ public abstract class Media
     public String getAvg()
     {
         return this.averageRating;
+    }
+    
+    public String getType()
+    {
+        return this.type;
     }
     
     @Override

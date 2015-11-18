@@ -4,6 +4,11 @@ public class Movie extends Media
 {
     private String movieLength;
     
+    public Movie()
+    {
+        this.setType("Movie");
+    }
+    
     public void setMovieLength(String newMovieLength)
     {
         this.movieLength = newMovieLength;

@@ -21,6 +21,26 @@ public class NetflixFileReader
             {
                 String[] lineSplit = line.split("[()|,]");
 
+                String lineTitle = "";
+                
+                if (lineSplit.length > 4)
+                {
+                    int count = lineSplit.length;
+                    int loop = 0;
+                    String tempString = "";
+                    
+                    do
+                    {
+                        tempString = lineSplit[loop];
+                        count--;
+                        loop++;
+                    } while (count > 4);
+                    
+                    lineTitle = tempString.trim();
+                }
+                
+                
+                
                 Media newMedia = null;
 
                 char charCheck = line.charAt(line.length() - 1);
@@ -30,7 +50,7 @@ public class NetflixFileReader
                 {
                     Series tempMedia = new Series();
 
-                    tempMedia.setTitle(lineSplit[0].trim());
+                    tempMedia.setTitle(lineTitle);
                     tempMedia.setYear(lineSplit[1].trim());
                     tempMedia.setAvg(lineSplit[3].trim());
                     tempMedia.setEpisodecount(lineSplit[4].trim());
@@ -40,7 +60,7 @@ public class NetflixFileReader
                 {
                     Movie tempMedia = new Movie();
 
-                    tempMedia.setTitle(lineSplit[0].trim());
+                    tempMedia.setTitle(lineTitle);
                     tempMedia.setYear(lineSplit[1].trim());
                     tempMedia.setAvg(lineSplit[3].trim());
 

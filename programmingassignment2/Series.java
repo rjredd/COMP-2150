@@ -4,6 +4,11 @@ public class Series extends Media
 {
     private String episodeCount;
 
+    public Series()
+    {
+        this.setType("Series");
+    }
+    
     public void setEpisodecount(String newEpisodeCount)
     {
         this.episodeCount = newEpisodeCount;
